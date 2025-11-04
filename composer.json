@@ -30,7 +30,7 @@
     },
     "autoload":{
         "psr-4":{
-            "Bone\\NativeApi":"src/"
+            "Bone\\NativeApi\\":"src/"
         }
     },
     "config": {
