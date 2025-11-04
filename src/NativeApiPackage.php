@@ -9,6 +9,7 @@ use Bone\Contracts\Container\ContainerInterface;
 use Bone\Contracts\Container\DefaultSettingsProviderInterface;
 use Bone\Contracts\Container\DependentPackagesProviderInterface;
 use Bone\Contracts\Container\RegistrationInterface;
+use Bone\Http\Middleware\JsonParse;
 use Bone\OAuth2\Http\Middleware\ResourceServerMiddleware;
 use Bone\Router\Router;
 use Bone\Router\RouterConfigInterface;
@@ -19,7 +20,7 @@ class NativeApiPackage implements RegistrationInterface, DependentPackagesProvid
 
     public function addRoutes(Container $c, Router $router)
     {
-        $demoApiRoute = $c->get('bone-native') ? $c->get('bone-native')['demoApiRoute'] : true;
+        $demoApiRoute = $c->has('bone-native') ? $c->get('bone-native')['demoApiRoute'] : true;
 
         if ($demoApiRoute === true) {
             $auth = $c->get(ResourceServerMiddleware::class);
