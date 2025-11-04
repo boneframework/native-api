@@ -43,7 +43,7 @@ class NativeApiPackage implements RegistrationInterface, DependentPackagesProvid
             'Bone\User\BoneUserPackage',
             'Bone\OAuth2\BoneOAuth2Package',
             'Bone\OpenApi\OpenApiPackage',
-            'Bone\BoneUserApi\UserApiPackage',
+            'Bone\BoneUserApi\BoneUserApiPackage',
             'Bone\Settings\SettingsPackage',
             'Bone\Notification\PushToken\PushNotificationPackage',
             self::class
